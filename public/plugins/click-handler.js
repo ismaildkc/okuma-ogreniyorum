@@ -1,6 +1,9 @@
 AFRAME.registerComponent("click-handler", {
   init: function () {
+    this.marker = document.querySelector(".marker");
     this.isVisible = false;
+
+    this.playAudio = this.playAudio.bind(this);
 
     this.el.sceneEl.addEventListener("markerFound", (e) => {
       this.isVisible = true;
@@ -10,21 +13,20 @@ AFRAME.registerComponent("click-handler", {
       this.isVisible = false;
     });
 
-    const marker = document.querySelector(".marker");
-    marker.addEventListener("click", function(ev, target){
-      console.log("ev", ev.detail.intersectedEl.id);
-      let sound = document.querySelector(".sound-" + ev.detail.intersectedEl.id);
-      // console.log(document.querySelector('a-marker').object3D);
-      
-      sound.components.sound.stopSound();
-      sound.components.sound.playSound();
-
-      
-      
-    })
+  },
+  
+  update: function () {
+    this.marker.addEventListener("click", this.playAudio)
+    this.marker.addEventListener("touchstart", this.playAudio)
   },
 
-  update: function () {},
-
   remove: function () {},
+
+  playAudio: function(ev){
+    console.log("ev", ev.detail.intersectedEl.id);
+    let sound = document.querySelector(".voice-" + ev.detail.intersectedEl.id);
+    // console.log(document.querySelector('a-marker').object3D);
+    sound.components.sound.stopSound();
+    sound.components.sound.playSound();
+  }
 });

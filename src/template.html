@@ -6,39 +6,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
     <title><%= htmlWebpackPlugin.options.title %></title>
-
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <script src="./plugins/gesture-detector.js"></script>
-    <script src="./plugins/gesture-handler.js"></script>
-    <script src="./plugins/sound-handler.js"></script>
     
   </head>
 
   <body>
     <div id="root"></div>
-
-    <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false;'>
-      <a-assets>
-        <audio id="sound" src="./sounds/tiger.mp3" preload="auto"></audio>
-      </a-assets>
-
-      <a-marker preset="hiro" soundhandler>
-        <a-entity
-          id="tiger-model"
-          name= "tiger"
-          gltf-model="./models/tiger.glb"
-          position="0 0 0"
-          scale="0.005 0.005 0.005"
-          class="clickable"
-          
-        >
-        </a-entity>
-      </a-marker>  
-      <a-entity sound="src: #sound" autoplay="false"></a-entity>
-      
-      <a-entity camera></a-entity>
-    </a-scene>
-<!--  -->
   </body>
 </html>

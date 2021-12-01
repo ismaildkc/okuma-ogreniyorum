@@ -31,44 +31,48 @@
     >
       <a-assets>
         <audio id="sound-tiger" preload="auto" src="./sounds/tiger.mp3"></audio>
-        <audio id="sound-bird" preload="auto" src="./sounds/bird.mp3"></audio>
+        <audio id="sound-bear" preload="auto" src="./sounds/bear.mp3"></audio>
         <audio id="sound-car" preload="auto" src="./sounds/car.mp3"></audio>
         <audio id="sound-cycle" preload="auto" src="./sounds/cycle.mp3"></audio>
+        
+        <audio id="voice-tiger" preload="auto" src="./sounds/tiger-voice.mp3"></audio>
+        <audio id="voice-bear" preload="auto" src="./sounds/bear-voice.mp3"></audio>
+        <audio id="voice-car" preload="auto" src="./sounds/car-voice.mp3"></audio>
+        <audio id="voice-cycle" preload="auto" src="./sounds/cycle-voice.mp3"></audio>
       </a-assets>
       
 
       <!-- Monster -->
-      <!-- <a-marker class="marker" preset="hiro"
+      <a-marker class="marker" preset="hiro"
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
       >
         <a-entity
-          id="bird"
+          id="bear"
           gltf-model="./models/monster.glb"
           position="0 0 0"
           scale="0.05 0.05 0.05"
           class="clickable"
           click-handler
+          sound-handler
         >
         </a-entity>
-      </a-marker> -->
+      </a-marker>
 
       <!-- Tiger -->
       <a-marker id="cite" class="marker" type="pattern" url="/marker/pt-cite.patt"
         raycaster="objects: .clickable"
         emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-        
+        cursor="fuse: false; rayOrigin: mouse;"        
       >
         <a-entity
           id="tiger"
           gltf-model="./models/tiger.glb"
           position="0 0 0"
           scale="0.005 0.005 0.005"
-          class="clickable"          
-          sound-handler
-          click-handler
+          class="clickable"    
+          sound-handler                
         >
         </a-entity>
       </a-marker>
@@ -107,9 +111,14 @@
       
       
       <a-entity class="sound-tiger" sound="src: #sound-tiger" autoplay="false"></a-entity>
-      <a-entity class="sound-bird" sound="src: #sound-bird" autoplay="false"></a-entity>
+      <a-entity class="sound-bear" sound="src: #sound-bear" autoplay="false"></a-entity>
       <a-entity class="sound-car" sound="src: #sound-car" autoplay="false"></a-entity>
       <a-entity class="sound-cycle" sound="src: #sound-cycle" autoplay="false"></a-entity>
+      
+      <a-entity class="voice-tiger" sound="src: #voice-tiger" autoplay="false"></a-entity>
+      <a-entity class="voice-bear" sound="src: #voice-bear" autoplay="false"></a-entity>
+      <a-entity class="voice-car" sound="src: #voice-car" autoplay="false"></a-entity>
+      <a-entity class="voice-cycle" sound="src: #voice-cycle" autoplay="false"></a-entity>
 
       <a-entity camera></a-entity>
     </a-scene>
