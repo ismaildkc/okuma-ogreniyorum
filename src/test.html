@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <title><%= htmlWebpackPlugin.options.title %></title>
+
+    <!-- <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script> -->
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="./plugins/gesture-detector.js"></script>
+    <script src="./plugins/gesture-handler.js"></script>
+    <script src="./plugins/click-handler.js"></script>
+    <script src="./plugins/sound-handler.js"></script>
+  
+
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <a-scene
+      arjs='sourceType: webcam; debugUIEnabled: false;'
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+    >
+      <a-assets>
+        <audio id="sound-tiger" preload="auto" src="./sounds/tiger.mp3"></audio>
+        <audio id="sound-bird" preload="auto" src="./sounds/bird.mp3"></audio>
+        <audio id="sound-car" preload="auto" src="./sounds/car.mp3"></audio>
+        <audio id="sound-cycle" preload="auto" src="./sounds/cycle.mp3"></audio>
+      </a-assets>
+      
+
+      <!-- Monster -->
+      <!-- <a-marker class="marker" preset="hiro"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+      >
+        <a-entity
+          id="bird"
+          gltf-model="./models/monster.glb"
+          position="0 0 0"
+          scale="0.05 0.05 0.05"
+          class="clickable"
+          click-handler
+        >
+        </a-entity>
+      </a-marker> -->
+
+      <!-- Tiger -->
+      <a-marker id="cite" class="marker" type="pattern" url="/marker/pt-cite.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        
+      >
+        <a-entity
+          id="tiger"
+          gltf-model="./models/tiger.glb"
+          position="0 0 0"
+          scale="0.005 0.005 0.005"
+          class="clickable"          
+          sound-handler
+          click-handler
+        >
+        </a-entity>
+      </a-marker>
+      
+      <!-- Car -->
+      <a-marker id="frac2" class="marker" type="pattern" url="/marker/pt-frac2.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+      >
+        <a-entity
+          id="car"
+          gltf-model="./models/car.glb"
+          position="0 0 0"
+          scale="0.5 0.5 0.5"
+          class="clickable"
+        >
+        </a-entity>
+      </a-marker>
+      
+      <!-- Cycle -->
+      <a-marker id="frac3" class="marker" type="pattern" url="/marker/pt-frac3.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+      >
+        <a-entity
+          id="cycle"
+          gltf-model="./models/cycle.glb"
+          position="0 0 0"
+          scale="0.5 0.5 0.5"
+          class="clickable"
+        >
+        </a-entity>
+      </a-marker>
+      
+      
+      <a-entity class="sound-tiger" sound="src: #sound-tiger" autoplay="false"></a-entity>
+      <a-entity class="sound-bird" sound="src: #sound-bird" autoplay="false"></a-entity>
+      <a-entity class="sound-car" sound="src: #sound-car" autoplay="false"></a-entity>
+      <a-entity class="sound-cycle" sound="src: #sound-cycle" autoplay="false"></a-entity>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
