@@ -1,26 +1,30 @@
 AFRAME.registerComponent('sound-handler', {
   init: function () {
-    this.soundEl = document.querySelector('[sound]');
-    this.marker = document.querySelector('a-marker');
+    // this.soundEl = document.querySelector('[sound]');
+    this.marker = document.querySelectorAll('a-marker');
+    console.log("marker", this.marker);
+
     this.visible = false;
   },
 
   tick: function () {
-    if (this.marker.object3D.visible && !this.visible) {
-      console.log("el", this.el);
-      
-      // let curMarker = this.el.querySelector(".clickable")
-      // console.log("el", curMarker.id);
-      // console.log("ding")
-      
-      // let sound = document.querySelector(".sound-" + curMarker.id);
-      
-      let sound = document.querySelector(".sound-" + this.el.id);
-      sound.components.sound.stopSound();
-      sound.components.sound.playSound();
-      this.visible = true;
-    } else if (!this.marker.object3D.visible) {
-      this.visible = false;
-    }
+    this.marker.forEach(element => {
+      let curMarker = element.querySelector(".clickable")
+      let sound = document.querySelector(".sound-" + curMarker.id);
+      let duration = document.querySelector("#sound-" + curMarker.id).duration;
+
+      if (element.object3D.visible) {
+
+        setTimeout(() => {
+          sound.components.sound.stopSound();
+        }, duration * 1000);
+
+        sound.components.sound.playSound();
+
+        this.visible = true;
+      } else if (!element.object3D.visible) {
+        this.visible = false;
+      }
+    });
   }
 });

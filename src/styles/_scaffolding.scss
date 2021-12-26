@@ -1,8 +1,8 @@
 html {
   font-size: $font-size;
   font-family: $font-family;
-  background: $background-color;
-  color: $font-color;
+  background: $red;
+  color: $blue;
   line-height: 1.4;
 }
 
@@ -11,14 +11,39 @@ body {
   overflow: hidden;
 }
 
-h1 {
-  margin: 0 0 2rem;
+canvas{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
 }
 
-.image {
-  display: inline-block;
-  height: 100px;
-  width: 100px;
-  background-image: url('~assets/example.png');
-  background-size: cover;
+.container{
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.button{
+  text-decoration: none;
+  background: $yellow;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 30px;
+  color: $blue;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 8px 6px -6px rgba(0,0,0, .35);
+}
+
+
+.sounds{
+  display: none;
+}
+
+.footer{
+  position: fixed;
+  bottom: 2rem;
+  left: 0;
+  width: 100vw;
 }

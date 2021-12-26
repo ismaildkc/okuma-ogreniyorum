@@ -40,45 +40,10 @@
         <audio id="voice-car" preload="auto" src="./sounds/car-voice.mp3"></audio>
         <audio id="voice-cycle" preload="auto" src="./sounds/cycle-voice.mp3"></audio>
       </a-assets>
-      
 
-      <!-- Monster -->
-      <a-marker class="marker" preset="hiro"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"
-      >
-        <a-entity
-          id="bear"
-          gltf-model="./models/monster.glb"
-          position="0 0 0"
-          scale="0.05 0.05 0.05"
-          class="clickable"
-          click-handler
-          sound-handler
-        >
-        </a-entity>
-      </a-marker>
 
-      <!-- Tiger -->
-      <a-marker id="cite" class="marker" type="pattern" url="/marker/pt-cite.patt"
-        raycaster="objects: .clickable"
-        emitevents="true"
-        cursor="fuse: false; rayOrigin: mouse;"        
-      >
-        <a-entity
-          id="tiger"
-          gltf-model="./models/tiger.glb"
-          position="0 0 0"
-          scale="0.005 0.005 0.005"
-          class="clickable"    
-          sound-handler                
-        >
-        </a-entity>
-      </a-marker>
-      
-      <!-- Car -->
-      <a-marker id="frac2" class="marker" type="pattern" url="/marker/pt-frac2.patt"
+      <!-- Araba -->
+      <a-marker class="marker" type="pattern" url="/marker/pattern-a.patt"
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
@@ -89,12 +54,15 @@
           position="0 0 0"
           scale="0.5 0.5 0.5"
           class="clickable"
+          sound="src: #voice-car; on: click"
+          sound-handler
         >
         </a-entity>
       </a-marker>
+
       
-      <!-- Cycle -->
-      <a-marker id="frac3" class="marker" type="pattern" url="/marker/pt-frac3.patt"
+      <!-- Bisiklet -->
+      <a-marker class="marker" type="pattern" url="/marker/pattern-b.patt"
         raycaster="objects: .clickable"
         emitevents="true"
         cursor="fuse: false; rayOrigin: mouse;"
@@ -105,20 +73,42 @@
           position="0 0 0"
           scale="0.5 0.5 0.5"
           class="clickable"
+          sound="src: #voice-cycle; on: click"
+          sound-handler
         >
         </a-entity>
       </a-marker>
       
+
+      <!-- Canavar -->
+      <!-- <a-marker class="marker" preset="hiro" -->
+      <a-marker class="marker" type="pattern" url="/marker/pattern-c.patt"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+      >
+        <a-entity
+          id="bear"
+          gltf-model="./models/monster.glb"
+          position="0 0 0"
+          scale="0.05 0.05 0.05"
+          class="clickable"
+          sound="src: #voice-bear; on: click"
+          sound-handler
+        >
+        </a-entity>
+      </a-marker>
+
       
-      <a-entity class="sound-tiger" sound="src: #sound-tiger" autoplay="false"></a-entity>
-      <a-entity class="sound-bear" sound="src: #sound-bear" autoplay="false"></a-entity>
-      <a-entity class="sound-car" sound="src: #sound-car" autoplay="false"></a-entity>
-      <a-entity class="sound-cycle" sound="src: #sound-cycle" autoplay="false"></a-entity>
+      <a-entity class="sounds sound-tiger" sound="src: #sound-tiger" autoplay="false"></a-entity>
+      <a-entity class="sounds sound-bear" sound="src: #sound-bear" autoplay="false"></a-entity>
+      <a-entity class="sounds sound-car" sound="src: #sound-car" autoplay="false"></a-entity>
+      <a-entity class="sounds sound-cycle" sound="src: #sound-cycle" autoplay="false"></a-entity>
       
-      <a-entity class="voice-tiger" sound="src: #voice-tiger" autoplay="false"></a-entity>
-      <a-entity class="voice-bear" sound="src: #voice-bear" autoplay="false"></a-entity>
-      <a-entity class="voice-car" sound="src: #voice-car" autoplay="false"></a-entity>
-      <a-entity class="voice-cycle" sound="src: #voice-cycle" autoplay="false"></a-entity>
+      <a-entity class="sounds voice-tiger" sound="src: #voice-tiger" autoplay="false"></a-entity>
+      <a-entity class="sounds voice-bear" sound="src: #voice-bear" autoplay="false"></a-entity>
+      <a-entity class="sounds voice-car" sound="src: #voice-car" autoplay="false"></a-entity>
+      <a-entity class="sounds voice-cycle" sound="src: #voice-cycle" autoplay="false"></a-entity>
 
       <a-entity camera></a-entity>
     </a-scene>
