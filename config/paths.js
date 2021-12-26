@@ -1,12 +1,12 @@
 const path = require('path')
 
 module.exports = {
-  // Source files
+  // Kaynak dosyalar
   src: path.resolve(__dirname, '../src'),
 
-  // Production build files
+  // Production dosyları
   build: path.resolve(__dirname, '../dist'),
 
-  // Static files that get copied to build folder
+  // Klasör oluşturmak için kopyalanan statik dosyalar 
   public: path.resolve(__dirname, '../public'),
 }

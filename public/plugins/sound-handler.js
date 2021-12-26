@@ -9,22 +9,29 @@ AFRAME.registerComponent('sound-handler', {
 
   tick: function () {
     this.marker.forEach(element => {
-      let curMarker = element.querySelector(".clickable")
-      let sound = document.querySelector(".sound-" + curMarker.id);
-      let duration = document.querySelector("#sound-" + curMarker.id).duration;
 
-      if (element.object3D.visible) {
+      if (element.object3D.visible == true && !this.visible) {
 
-        setTimeout(() => {
-          sound.components.sound.stopSound();
-        }, duration * 1000);
-
-        sound.components.sound.playSound();
-
+        this.playSound(element)
         this.visible = true;
       } else if (!element.object3D.visible) {
         this.visible = false;
       }
     });
+    
+  },
+
+  playSound(el){
+    let curMarker = el.querySelector(".clickable")
+    let sound = document.querySelector(".sound-" + curMarker.id);
+    let duration = document.querySelector("#sound-" + curMarker.id).duration;
+    
+    sound.components.sound.pauseSound();
+    sound.components.sound.playSound();
+    
+    // setTimeout(() => {
+    //   sound.components.sound.stopSound();
+    // }, duration * 1000);
+    
   }
 });

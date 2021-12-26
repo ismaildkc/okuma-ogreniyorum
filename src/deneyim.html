@@ -27,6 +27,7 @@
       renderer="logarithmicDepthBuffer: true;"
       vr-mode-ui="enabled: false"
       gesture-detector
+      sound-handler
       id="scene"
     >
       <a-assets>
@@ -55,7 +56,7 @@
           scale="0.5 0.5 0.5"
           class="clickable"
           sound="src: #voice-car; on: click"
-          sound-handler
+          
         >
         </a-entity>
       </a-marker>
@@ -71,10 +72,10 @@
           id="cycle"
           gltf-model="./models/cycle.glb"
           position="0 0 0"
-          scale="0.5 0.5 0.5"
+          scale="0.2 0.2 0.2"
           class="clickable"
           sound="src: #voice-cycle; on: click"
-          sound-handler
+          
         >
         </a-entity>
       </a-marker>
@@ -100,15 +101,15 @@
       </a-marker>
 
       
-      <a-entity class="sounds sound-tiger" sound="src: #sound-tiger" autoplay="false"></a-entity>
-      <a-entity class="sounds sound-bear" sound="src: #sound-bear" autoplay="false"></a-entity>
-      <a-entity class="sounds sound-car" sound="src: #sound-car" autoplay="false"></a-entity>
-      <a-entity class="sounds sound-cycle" sound="src: #sound-cycle" autoplay="false"></a-entity>
+      <a-entity class="sounds sound-tiger" sound="src: #sound-tiger; poolSize: 1" autoplay="false"></a-entity>
+      <a-entity class="sounds sound-bear" sound="src: #sound-bear; poolSize: 1" autoplay="false"></a-entity>
+      <a-entity class="sounds sound-car" sound="src: #sound-car; poolSize: 1" autoplay="false"></a-entity>
+      <a-entity class="sounds sound-cycle" sound="src: #sound-cycle; poolSize: 1" autoplay="false"></a-entity>
       
-      <a-entity class="sounds voice-tiger" sound="src: #voice-tiger" autoplay="false"></a-entity>
-      <a-entity class="sounds voice-bear" sound="src: #voice-bear" autoplay="false"></a-entity>
-      <a-entity class="sounds voice-car" sound="src: #voice-car" autoplay="false"></a-entity>
-      <a-entity class="sounds voice-cycle" sound="src: #voice-cycle" autoplay="false"></a-entity>
+      <a-entity class="sounds voice-tiger" sound="src: #voice-tiger; poolSize: 1" autoplay="false"></a-entity>
+      <a-entity class="sounds voice-bear" sound="src: #voice-bear; poolSize: 1" autoplay="false"></a-entity>
+      <a-entity class="sounds voice-car" sound="src: #voice-car; poolSize: 1" autoplay="false"></a-entity>
+      <a-entity class="sounds voice-cycle" sound="src: #voice-cycle; poolSize: 1" autoplay="false"></a-entity>
 
       <a-entity camera></a-entity>
     </a-scene>
