@@ -23,5 +23,7 @@ Gerekli dosyalar yüklendikten sonra projeyi "development" modunda ayağa kaldı
   npm run start
   ```
   
+  Proje bilgisayar üzerinden https://localhost:8080/ adresinde ayağa kalkacak ve aynı ağa bağlı telefonunuzdan, https://192.168.1.20:8080/ adresinden deneyimlenmek için hazır olacaktır.
+  
   * Web sayfası üzerinde telefon kamerasını kullanabilmek için SSL sertifikası bulunması gerekmektedir. 
   * Development modunda, local sunucu zaten "https" olarak otomatik yönlendirecektir.
