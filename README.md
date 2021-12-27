@@ -1,5 +1,9 @@
 # okuma öğreniyorum
 
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/pZT_RO5OGlU/0.jpg)](https://www.youtube.com/watch?v=pZT_RO5OGlU)
+
+
 ### Nedir?
 
 Bu proje, okuma-yazma bilmeyen çocuklara, harfleri tanımayı ve okumayı eğlenceli hale getirmeyi hedefleyen bir arttırılmış gerçeklik uygulamasıdır.
